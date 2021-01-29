@@ -13,8 +13,9 @@ class CreateTableUser extends Migration
      */
     public function up()
     {
-        Schema::create('tb_user', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id('id_user');
+            $table->string('id_tipe_user');
             $table->string('nama_depan', 100);
             $table->string('nama_belakang', 100);
             $table->string('email', 100);

@@ -43,4 +43,8 @@ class User extends Authenticatable
     protected $casts = [
 
     ];
+    public function tipeuser()
+    {
+        return $this->hasOne('\App\Model\TipeUser', 'id_tipe_user', 'id_tipe_user');
+    }
 }

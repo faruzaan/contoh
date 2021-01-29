@@ -15,12 +15,13 @@ class UserSeeder extends Seeder
     public function run()
     {
         $data = [
+            'id_tipe_user' => '1',
             'nama_depan' => 'Farhan',
             'nama_belakang' => 'Fauzaan',
             'email' => 'farhanff@gmail.com',
             'username' => 'faruzaan',
             'password' => 'Fauzaan'
         ];
-        DB::table('tb_user')->insert($data);
+        DB::table('users')->insert($data);
     }
 }

@@ -10,12 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Data User</h1>
+          <h1>Data Produk</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
-            <li class="breadcrumb-item active">Data User</li>
+            <li class="breadcrumb-item active">Data Produk</li>
           </ol>
         </div>
       </div>
@@ -29,7 +29,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <a href="{{url('user/add')}}" class="btn btn-success">
+              <a href="{{url('produk/add')}}" class="btn btn-success">
                 <i class="fa fa-plus-circle"></i>Tambah
               </a>
             </div>
@@ -39,10 +39,9 @@
                 <thead>
                     <tr>
                     <th>No</th>
-                    <th>Nama Depan</th>
-                    <th>Nama Belakang</th>
-                    <th>Email</th>
-                    <th>Jabatan</th>
+                    <th>User</th>
+                    <th>Nama Produk</th>
+                    <th>Status</th>
                     <th>Aksi</th>
                     </tr>
                 </thead>
@@ -50,15 +49,20 @@
                     @foreach ($result as $row)
                     <tr>
                         <td>{{ !empty($i) ? ++$i : $i = 1 }}</td>
-                        <td>{{@$row->nama_depan}}</td>
-                        <td>{{@$row->nama_belakang}}</td>
-                        <td>{{@$row->email}}</td>
-                        <td>{{@$row->tipeuser->tipe_user}}</td>
+                        <td>{{@$row->user->nama_depan}} {{@$row->user->nama_belakang}}</td>
+                        <td>{{@$row->nama_produk}}</td>
                         <td>
-                            <a href="{{url("user/$row->id/edit")}}" class="btn btn-sm btn-warning">
+                            @if (@$row->status == 0)
+                                Dibuat
+                            @else
+                                Selesai
+                            @endif
+                        </td>
+                        <td>
+                            <a href="{{url("produk/$row->id/edit")}}" class="btn btn-sm btn-warning">
                                 <i class="fa fa-edit"></i>
                             </a>
-                            <form action="{{url("user/$row->id/delete")}}" method="POST" style="display: inline;">
+                            <form action="{{url("produk/$row->id/delete")}}" method="POST" style="display: inline;">
                                 {{csrf_field()}}
                                 {{method_field('DELETE')}}
                                 <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>

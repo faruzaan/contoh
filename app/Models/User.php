@@ -17,7 +17,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id_user',
+        'id',
+        'id_tipe_user',
         'nama_depan',
         'nama_belakang',
         'email',
@@ -45,6 +46,6 @@ class User extends Authenticatable
     ];
     public function tipeuser()
     {
-        return $this->hasOne('\App\Model\TipeUser', 'id_tipe_user', 'id_tipe_user');
+        return $this->hasOne('\App\Models\TipeUser', 'id_tipe_user', 'id_tipe_user');
     }
 }

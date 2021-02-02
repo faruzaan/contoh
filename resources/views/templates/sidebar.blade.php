@@ -30,10 +30,26 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{url('/tipeuser')}}" class="nav-link">
+            <a href="{{url('/TipeUser')}}" class="nav-link">
               <i class="nav-icon fa fa-users"></i>
               <p>
                 Tipe User
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{url('/produk')}}" class="nav-link">
+              <i class="nav-icon fa fa-users"></i>
+              <p>
+                Produk
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{url('/variant')}}" class="nav-link">
+              <i class="nav-icon fa fa-users"></i>
+              <p>
+                Variant
               </p>
             </a>
           </li>

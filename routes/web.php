@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::auth();
-Route::group(['middleware' => 'auth'], function () {
+// Route::auth();
+// Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/', function () {
         return view('dashboard');
@@ -40,7 +40,32 @@ Route::group(['middleware' => 'auth'], function () {
     Route::patch('/produk/{id}/edit','ProdukController@update');
     Route::delete('/produk/{id}/delete','ProdukController@destroy');
 
-});
+    Route::get('/varian','VarianController@index');
+    Route::get('/varian/add','VarianController@create');
+    Route::post('/varian/add','VarianController@store');
+    Route::get('/varian/{id}/edit','VarianController@edit');
+    Route::patch('/varian/{id}/edit','VarianController@update');
+    Route::delete('/varian/{id}/delete','VarianController@destroy');
+
+    Route::get('/dftproses','DaftarProsesController@index');
+    Route::get('/dftproses/add','DaftarProsesController@create');
+    Route::post('/dftproses/add','DaftarProsesController@store');
+    Route::get('/dftproses/{id}/edit','DaftarProsesController@edit');
+    Route::patch('/dftproses/{id}/edit','DaftarProsesController@update');
+    Route::delete('/dftproses/{id}/delete','DaftarProsesController@destroy');
+
+    Route::get('/proses','ProsesController@index');
+    Route::get('/proses/add','ProsesController@create');
+    Route::post('/proses/add','ProsesController@store');
+    Route::get('/proses/{id}/edit','ProsesController@edit');
+    Route::patch('/proses/{id}/edit','ProsesController@update');
+    Route::delete('/proses/{id}/delete','ProsesController@destroy');
+
+    Route::get('/tugas','TugasController@index');
+    Route::get('/tugas/{id}/start','TugasController@start');
+    Route::get('/tugas/{id}/finish','TugasController@finish');
+
+// });
 
 
 

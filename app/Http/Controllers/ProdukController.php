@@ -17,12 +17,10 @@ class ProdukController extends Controller
     }
     public function store(Request $request)
     {
-        $request->id_user = '1';
-        $request->status = '0';
         $rules = [
-            'id_user' => 'required|max:100',
-            'tipe_user' => 'required|max:100',
-            'status' => 'required|max:1'
+            // 'id_user' => 'required|max:100',
+            'tipe_user' => 'required|max:100'
+            // 'status' => 'required|max:1'
         ];
         $this->validate($request, $rules);
 

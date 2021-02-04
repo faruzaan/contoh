@@ -5,12 +5,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>{{empty($result) ? 'Tambah' : 'Edit'}} Produk</h1>
+          <h1>{{empty($result) ? 'Tambah' : 'Edit'}} Proses</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
-            <li class="breadcrumb-item active">{{empty($result) ? 'Tambah' : 'Edit'}} Produk</li>
+            <li class="breadcrumb-item active">{{empty($result) ? 'Tambah' : 'Edit'}} User</li>
           </ol>
         </div>
       </div>
@@ -24,27 +24,40 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <a href="{{url('produk/')}}" class="btn bg-purple">
+              <a href="{{url('proses/')}}" class="btn bg-purple">
                 <i class="fa fa-chevron-left"></i>Kembali
               </a>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <form action="{{ empty($result) ? url("produk/add") : url("produk/$result->id_produk/edit")}}" class="form-horizontal" method="POST">
+                <form action="{{ empty($result) ? url("proses/add") : url("proses/$result->id_proses/edit")}}" class="form-horizontal" method="POST">
                     {{csrf_field()}}
                     @if (!empty($result))
                         {{method_field('patch')}}
                     @endif
-                    {{-- <div class="form-group">
-                        <label class="control-label col-sm-2">User</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="nama_produk" class="form-control" placeholder="Masukan Username" value="{{@$result->nama_produk}}">
-                        </div>
-                    </div> --}}
                     <div class="form-group">
-                        <label class="control-label col-sm-2">Nama Produk</label>
+                        <label class="control-label col-sm-2">Produk</label>
                         <div class="col-sm-10">
-                            <input type="text" name="nama_produk" class="form-control" placeholder="Masukan Username" value="{{@$result->nama_produk}}">
+                            <select name="id_produk" class="form-control">
+                                <option value="" disabled selected hidden>Pilih Tipe</option>
+                                @foreach (\App\Models\Produk::all() as $produk)
+                                    <option value="{{@$produk->id_produk}}" {{@$result->id_produk == $produk->id_produk ? 'selected' : ''}}>
+                                    {{@$produk->nama_produk}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Proses</label>
+                        <div class="col-sm-10">
+                            <select name="id_dft_proses" class="form-control">
+                                <option value="" disabled selected hidden>Pilih Tipe</option>
+                                @foreach (\App\Models\DaftarProses::all() as $dftproses)
+                                    <option value="{{@$dftproses->id_dft_proses}}" {{@$result->id_dft_proses == $dftproses->id_dft_proses ? 'selected' : ''}}>
+                                    {{@$dftproses->nama_proses}}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
 

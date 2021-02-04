@@ -24,7 +24,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <a href="{{url('user/add')}}" class="btn bg-purple">
+              <a href="{{url('user/')}}" class="btn bg-purple">
                 <i class="fa fa-chevron-left"></i>Kembali
               </a>
             </div>

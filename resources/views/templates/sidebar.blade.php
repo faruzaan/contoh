@@ -46,10 +46,34 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{url('/variant')}}" class="nav-link">
+            <a href="{{url('/varian')}}" class="nav-link">
               <i class="nav-icon fa fa-users"></i>
               <p>
                 Variant
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{url('/proses')}}" class="nav-link">
+              <i class="nav-icon fa fa-users"></i>
+              <p>
+                Proses
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{url('/dftproses')}}" class="nav-link">
+              <i class="nav-icon fa fa-users"></i>
+              <p>
+                Daftar Proses
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{url('/tugas')}}" class="nav-link">
+              <i class="nav-icon fa fa-users"></i>
+              <p>
+                Tugas
               </p>
             </a>
           </li>

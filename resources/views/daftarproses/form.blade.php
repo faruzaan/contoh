@@ -5,12 +5,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>{{empty($result) ? 'Tambah' : 'Edit'}} Produk</h1>
+          <h1>{{empty($result) ? 'Tambah' : 'Edit'}} Daftar Proses</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
-            <li class="breadcrumb-item active">{{empty($result) ? 'Tambah' : 'Edit'}} Produk</li>
+            <li class="breadcrumb-item active">{{empty($result) ? 'Tambah' : 'Edit'}} Daftar Proses</li>
           </ol>
         </div>
       </div>
@@ -24,27 +24,28 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <a href="{{url('produk/')}}" class="btn bg-purple">
+              <a href="{{url('dftproses/')}}" class="btn bg-purple">
                 <i class="fa fa-chevron-left"></i>Kembali
               </a>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <form action="{{ empty($result) ? url("produk/add") : url("produk/$result->id_produk/edit")}}" class="form-horizontal" method="POST">
+                <form action="{{ empty($result) ? url("dftproses/add") : url("dftproses/$result->id_dft_proses/edit")}}" class="form-horizontal" method="POST">
                     {{csrf_field()}}
                     @if (!empty($result))
                         {{method_field('patch')}}
                     @endif
-                    {{-- <div class="form-group">
-                        <label class="control-label col-sm-2">User</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="nama_produk" class="form-control" placeholder="Masukan Username" value="{{@$result->nama_produk}}">
-                        </div>
-                    </div> --}}
                     <div class="form-group">
-                        <label class="control-label col-sm-2">Nama Produk</label>
+                        <label class="control-label col-sm-2">Nama Proses</label>
                         <div class="col-sm-10">
-                            <input type="text" name="nama_produk" class="form-control" placeholder="Masukan Username" value="{{@$result->nama_produk}}">
+                            <input type="text" name="nama_proses" class="form-control" placeholder="Masukan Nama Proses" value="{{@$result->nama_proses}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Tempat Proses</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="tempat_proses" class="form-control" placeholder="Masukan Tempat Proses" value="{{@$result->tempat_proses}}">
                         </div>
                     </div>
 

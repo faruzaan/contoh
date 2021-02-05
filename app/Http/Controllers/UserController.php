@@ -19,10 +19,8 @@ class UserController extends Controller
     {
         $rules = [
             'id_tipe_user' => 'required|max:100',
-            'nama_depan' => 'required|max:100',
-            'nama_belakang' => 'required|max:100',
+            'name' => 'required|max:100',
             'email' => 'required|max:100',
-            'username' => 'required|max:100',
             'password' => 'required|max:100'
         ];
         $this->validate($request, $rules);
@@ -43,10 +41,8 @@ class UserController extends Controller
     {
         $rules = [
             'id_tipe_user' => 'required|max:100',
-            'nama_depan' => 'required|max:100',
-            'nama_belakang' => 'required|max:100',
+            'name' => 'required|max:100',
             'email' => 'required|max:100',
-            'username' => 'required|max:100',
             'password' => 'required|max:100'
         ];
         $this->validate($request, $rules);

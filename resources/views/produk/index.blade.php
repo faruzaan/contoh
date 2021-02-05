@@ -49,7 +49,7 @@
                     @foreach ($result as $row)
                     <tr>
                         <td>{{ !empty($i) ? ++$i : $i = 1 }}</td>
-                        <td>{{@$row->user->nama_depan}} {{@$row->user->nama_belakang}}</td>
+                        <td>{{@$row->user->name}} {{@$row->user->nama_belakang}}</td>
                         <td>{{@$row->nama_produk}}</td>
                         <td>
                             @if (@$row->status == 0)
@@ -59,6 +59,7 @@
                             @endif
                         </td>
                         <td>
+                            @if (Auth::user()->name == 0)
                             <a href="{{url("produk/$row->id_produk/edit")}}" class="btn btn-sm btn-warning">
                                 <i class="fa fa-edit"></i>
                             </a>
@@ -67,6 +68,10 @@
                                 {{method_field('DELETE')}}
                                 <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>
                             </form>
+                            @endif
+                            <a href="{{url("proses/$row->id_produk/add")}}" class="btn btn-sm btn-warning">
+                                <i class="fa fa-edit"></i>
+                            </a>
                         </td>
                     </tr>
                     @endforeach

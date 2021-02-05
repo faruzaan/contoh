@@ -53,7 +53,7 @@
                         <td>{{ !empty($i) ? ++$i : $i = 1 }}</td>
                         <td>{{@$row->produk->nama_produk}}</td>
                         <td>{{@$row->daftarproses->nama_proses}}</td>
-                        <td>{{@$row->user->nama_depan}} {{@$row->user->nama_belakang}}</td>
+                        <td>{{@$row->user->name}}</td>
                         <td>
                             @if (@$row->status == 2||3)
                                 {{@$row->updated_at}}

@@ -39,8 +39,7 @@
                 <thead>
                     <tr>
                     <th>No</th>
-                    <th>Nama Depan</th>
-                    <th>Nama Belakang</th>
+                    <th>Nama </th>
                     <th>Email</th>
                     <th>Jabatan</th>
                     <th>Aksi</th>
@@ -50,8 +49,7 @@
                     @foreach ($result as $row)
                     <tr>
                         <td>{{ !empty($i) ? ++$i : $i = 1 }}</td>
-                        <td>{{@$row->nama_depan}}</td>
-                        <td>{{@$row->nama_belakang}}</td>
+                        <td>{{@$row->name}}</td>
                         <td>{{@$row->email}}</td>
                         <td>{{@$row->tipeuser->tipe_user}}</td>
                         <td>

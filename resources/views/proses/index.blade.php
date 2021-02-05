@@ -10,7 +10,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Data User</h1>
+          <h1>Data Proses</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -52,7 +52,7 @@
                         <td>{{ !empty($i) ? ++$i : $i = 1 }}</td>
                         <td>{{@$row->daftarproses->nama_proses}}</td>
                         <td>{{@$row->produk->nama_produk}}</td>
-                        <td>{{@$row->user->nama_depan}} {{@$row->user->nama_belakang}}</td>
+                        <td>{{@$row->user->name}} {{@$row->user->nama_belakang}}</td>
                         <td>
                             @if (@$row->status == 0)
                                 Submit

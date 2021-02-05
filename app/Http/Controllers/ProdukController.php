@@ -18,9 +18,6 @@ class ProdukController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            // 'id_user' => 'required|max:100',
-            'tipe_user' => 'required|max:100'
-            // 'status' => 'required|max:1'
         ];
         $this->validate($request, $rules);
 
@@ -38,9 +35,6 @@ class ProdukController extends Controller
     public function update(Request $request,$id)
     {
         $rules = [
-            'id_user' => 'required|max:100',
-            'tipe_user' => 'required|max:100',
-            'status' => 'required|max:1'
         ];
         $this->validate($request, $rules);
 

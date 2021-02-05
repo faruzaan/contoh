@@ -16,7 +16,17 @@ use Illuminate\Support\Facades\Route;
 // Route::auth();
 // Route::group(['middleware' => 'auth'], function () {
 
+
+
+
+// });
+
+
+Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::get('/', function () {
+        return view('dashboard');
+    });
+    Route::get('/dashboard', function () {
         return view('dashboard');
     });
     Route::get('/user','UserController@index');
@@ -55,8 +65,8 @@ use Illuminate\Support\Facades\Route;
     Route::delete('/dftproses/{id}/delete','DaftarProsesController@destroy');
 
     Route::get('/proses','ProsesController@index');
-    Route::get('/proses/add','ProsesController@create');
-    Route::post('/proses/add','ProsesController@store');
+    Route::get('/proses/{id}/add','ProsesController@create');
+    Route::post('/proses/{id}/add','ProsesController@store');
     Route::get('/proses/{id}/edit','ProsesController@edit');
     Route::patch('/proses/{id}/edit','ProsesController@update');
     Route::delete('/proses/{id}/delete','ProsesController@destroy');
@@ -64,8 +74,8 @@ use Illuminate\Support\Facades\Route;
     Route::get('/tugas','TugasController@index');
     Route::get('/tugas/{id}/start','TugasController@start');
     Route::get('/tugas/{id}/finish','TugasController@finish');
+});
 
-// });
-
-
-
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

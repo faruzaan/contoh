@@ -41,6 +41,7 @@
                             <input type="text" name="nama_produk" class="form-control" placeholder="Masukan Username" value="{{@$result->nama_produk}}">
                         </div>
                     </div> --}}
+                    <input type="hidden" name="id_user" value="{{ Auth::user()->id }}">
                     <div class="form-group">
                         <label class="control-label col-sm-2">Nama Produk</label>
                         <div class="col-sm-10">

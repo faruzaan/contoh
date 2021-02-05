@@ -35,17 +35,11 @@
                     @if (!empty($result))
                         {{method_field('patch')}}
                     @endif
-                    <div class="form-group">
-                        <label class="control-label col-sm-2">Nama Depan</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="nama_depan" class="form-control" placeholder="Masukan Nama Depan" value="{{@$result->nama_depan}}">
-                        </div>
-                    </div>
 
                     <div class="form-group">
-                        <label class="control-label col-sm-2">Nama Belakang</label>
+                        <label class="control-label col-sm-2">Nama</label>
                         <div class="col-sm-10">
-                            <input type="text" name="nama_belakang" class="form-control" placeholder="Masukan Nama Belakang" value="{{@$result->nama_belakang}}">
+                            <input type="text" name="name" class="form-control" placeholder="Masukan Nama" value="{{@$result->name}}">
                         </div>
                     </div>
 
@@ -53,13 +47,6 @@
                         <label class="control-label col-sm-2">Email</label>
                         <div class="col-sm-10">
                             <input type="text" name="email" class="form-control" placeholder="Masukan Email" value="{{@$result->email}}">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-sm-2">Username</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="username" class="form-control" placeholder="Masukan Username" value="{{@$result->username}}">
                         </div>
                     </div>
 
